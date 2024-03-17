@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { useLocation } from '@reach/router';
+// import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 
 // https://www.gatsbyjs.com/docs/add-seo-component/
 
-const Head = ({ title, description, image }) => {
-  const { pathname } = useLocation();
+// const Head = ({ title, description, image }) => {
+const Head = ({ title }) => {
+  // const { pathname } = useLocation();
 
   const { site } = useStaticQuery(
     graphql`
@@ -28,16 +29,16 @@ const Head = ({ title, description, image }) => {
   const {
     defaultTitle,
     defaultDescription,
-    siteUrl,
-    defaultImage,
-    twitterUsername,
+    // siteUrl,
+    // defaultImage,
+    // twitterUsername,
   } = site.siteMetadata;
 
   const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`,
-    url: `${siteUrl}${pathname}`,
+    title: 'Kajal Lochab' || defaultTitle,
+    description: 'aspiring software engineer' || defaultDescription,
+    // image: `${siteUrl}${defaultImage}`,
+    // url: `${siteUrl}${pathname}`,
   };
 
   return (
@@ -45,16 +46,16 @@ const Head = ({ title, description, image }) => {
       <html lang="en" />
 
       <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
+      {/* <meta name="image" content={seo.image} /> */}
 
       <meta property="og:title" content={seo.title} />
       <meta property="og:description" content={seo.description} />
-      <meta property="og:image" content={seo.image} />
+      {/* <meta property="og:image" content={seo.image} /> */}
       <meta property="og:url" content={seo.url} />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={twitterUsername} />
+      <meta name="twitter:creator" content={'kajal_lochab'} />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.image} />
