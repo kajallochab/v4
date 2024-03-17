@@ -73,13 +73,13 @@ const Hero = () => {
       </p>
     </>
   );
-  const five = (
-    <a className="hi" href="https://about.google/intl/ALL_in/" target="_blank" rel="noreferrer">
-      this is my portfolio ♥
-    </a>
-  );
+  // const five = (
+  //   <a className="hi" href="https://about.google/intl/ALL_in/" target="_blank" rel="noreferrer">
+  //     my portfolio ♥
+  //   </a>
+  // );
 
-  const items = [one, two, three, four, five];
+  const items = [one, two, three, four];
 
   return (
     <StyledHeroSection>
